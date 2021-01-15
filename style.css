@@ -1,0 +1,31 @@
+:root{
+    --spacing:10px;
+    --blur:10px;
+    --base:#ffc600;
+}
+
+html,body{
+    margin:0;
+    padding:0;
+    text-align:center;
+    background: blueviolet;
+}
+
+h2{
+    color:darkblue;
+    text-align:center;
+}
+
+input{
+    width:100px;
+}
+
+img{
+
+    padding: var(--spacing);
+    background: var(--base);
+    filter: blur(var(--blur));
+}
+.h2{
+    color:var(--base);
+}

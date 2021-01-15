@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <link rel="stylesheet" href="style.css">   
+    <title>Document</title>
+</head>
+<body>
+   <h2>Change CSS variables using <span class="h2">Javascript</span></h2>
+   <div class="main">
+       <label for="spacing">Spacing:</label>
+       <input type="range" name="spacing" min="10" max="200" value="10" data-pixels="px">
+       <label for="blur">Blur:</label>
+       <input type="range" name="blur" min="0" max="25" value="10" data-pixels="px">
+       <label for="base">Color:</label>
+       <input name="base" type="color" value="#ffc600">
+   </div>
+       <img src="back.jpg" height="500px" width="500px"> 
+ 
+
+</body>
+</html>
+
+<script>
+    const inputs=document.querySelectorAll('.main input');
+    //const a=document.getElementById("a");
+    function newcss()
+    {
+        //console.log(this.value, this.name);
+        const suffix=this.dataset.pixels || '';
+        //a.style.setProperty(`--${this.name}`,this.value+suffix);
+       // const suffix =this.dataset.pixels || '';
+    
+       document.documentElement.style.setProperty(`--${this.name}`,this.value+suffix)    ;
+    }
+    inputs.forEach(input=>input.addEventListener('change',newcss));
+    inputs.forEach(input=>input.addEventListener('mousemove',newcss));
+
+</script>
